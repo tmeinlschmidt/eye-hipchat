@@ -54,14 +54,18 @@ end
  * `api` - use *v1* (default) or v2
  * `name` - who is reporting to hipchat, *Eye Bot* as a default
  * `color` - *yellow* is default. You can choose from gray, green, purple, red, yellow or random
+ * `notify_all` - notify everyone in the room. Default is *false*
+ * `format` - format of the message. Either `html` or `text`. Default is *html*
  * `message` - message to be sent, default is `<strong>#name#</strong> on #host# #message# at #time#.`
-  * `time` - human readable time of the event
-  * `host` - hostname
-  * `message` - full message
-  * `name` - name of process
-  * `full_name` - full process name (like group::process)
-  * `pid` - process ID
-  * `level` - message info level
+
+* `message` has following variables (variable must be enclosed to ##)
+ * `time` - human readable time of the event
+ * `host` - hostname
+ * `message` - full message
+ * `name` - name of process
+ * `full_name` - full process name (like group::process)
+ * `pid` - process ID
+ * `level` - message info level
 
 ## Contributing
 

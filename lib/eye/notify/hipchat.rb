@@ -19,10 +19,14 @@ module Eye
       # not required, if not specified, we're using 'Eye Bot'
       param :name, String, false, 'Eye Bot'
       # not required, 'yellow' as default color
-      param :color, String, false, 'yellow', ['gray','green','purple','red','yellow','random']
+      param :color, String, false, 'yellow', ['gray', 'green', 'purple', 'red', 'yellow', 'random']
       # available messages:
       #  time host message name full_name pid level
       param :message, String, false, '<strong>#name#</strong> on #host# #message# at #time#.'
+      # whether to notify room or not
+      param :notify_all, [TrueClass, FalseClass], false, false
+      # format of the message
+      param :format, String, false, 'html', ['text', 'html']
 
       def execute
         say(parse_message)
@@ -46,7 +50,7 @@ module Eye
       end
 
       def say(what)
-        client[contact].send(name, what, message_format: 'html')
+        client[contact].send(name, what, message_format: format, color: color, notify: notify_all)
       end
     end
 
