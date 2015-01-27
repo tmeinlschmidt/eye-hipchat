@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "eye-hipchat"
   spec.version       = Eye::Notify::Hipchat::VERSION
   spec.authors       = ["Tom Meinlschmidt"]
-  spec.email         = ["tomas@meinlschmidt.com"]
+  spec.email         = ["tomas@meinlschmidt.org"]
   spec.summary       = %q{Eye to hipchat notification}
   spec.description   = %q{Eye to hipchat notification}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/tmeinlschmidt/eye-hipchat"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
