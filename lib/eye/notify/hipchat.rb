@@ -35,10 +35,11 @@ module Eye
       private
 
       def parse_message
+        filled_message = message.dup
         %w{time host message name full_name pid level}.each do |variable|
-          message.gsub!("##{variable}#", send("msg_#{variable}").to_s) if message =~ /##{variable}#/
+          filled_message.gsub!("##{variable}#", send("msg_#{variable}").to_s) if filled_message =~ /##{variable}#/
         end
-        message
+        filled_message
       end
 
       def msg_time
